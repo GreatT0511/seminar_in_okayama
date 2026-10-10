@@ -17,7 +17,7 @@
 
 ## 資料を追加する
 
-`docs/assets/resources.js` の `ando` または `tanaka` に資料を追加します。田中セッションには講演スライドを登録済みです。登録すると、代替表示が資料リンクに置き換わります。
+`docs/assets/resources.js` の `ando` または `tanaka` に資料を追加します。安藤セッションには表紙サムネイル付きの講演スライド、田中セッションには講演スライドを登録済みです。登録すると、代替表示が資料リンクに置き換わります。
 
 ```js
 window.seminarResources = {
@@ -26,13 +26,15 @@ window.seminarResources = {
       title: "当日のスライド",
       description: "安藤セッションの投影資料です。",
       url: "./materials/ando-slides.pdf",
+      thumbnail: "./assets/ando-cover.png",
+      thumbnailAlt: "講演資料の表紙",
     },
   ],
   tanaka: [],
 };
 ```
 
-PDF などを配置する場合は `docs/materials/` に保存します。Google スライド等の HTTPS URL も指定できます。会場の参加者が閲覧できる共有設定になっていることを確認してください。
+PDF などを配置する場合は `docs/materials/` に保存します。Google スライド等の HTTPS URL も指定できます。会場の参加者が閲覧できる共有設定になっていることを確認してください。`thumbnail` と `thumbnailAlt` は省略可能です。指定すると表紙画像と資料名を含むリンクが表示され、全体をクリックして資料を開けます。
 
 ## ローカル確認
 

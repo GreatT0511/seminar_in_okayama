@@ -67,6 +67,27 @@
       link.rel = "noopener noreferrer";
       link.setAttribute("aria-label", `${resource.title}（新しいタブで開く）`);
 
+      if (typeof resource.thumbnail === "string" && resource.thumbnail.trim()) {
+        let thumbnailUrl;
+        try {
+          thumbnailUrl = new URL(resource.thumbnail, document.baseURI);
+        } catch {
+          thumbnailUrl = null;
+        }
+        if (thumbnailUrl && ["http:", "https:"].includes(thumbnailUrl.protocol)) {
+          const image = document.createElement("img");
+          image.className = "resource-thumbnail";
+          image.src = thumbnailUrl.href;
+          image.alt = resource.thumbnailAlt || "";
+          image.loading = "lazy";
+          image.decoding = "async";
+          image.width = 1672;
+          image.height = 941;
+          link.classList.add("resource-link--thumbnail");
+          link.append(image);
+        }
+      }
+
       const copy = document.createElement("span");
       copy.className = "resource-link-copy";
       const title = document.createElement("span");
@@ -83,7 +104,10 @@
       action.className = "resource-action";
       action.textContent = "資料を開く ↗";
       action.setAttribute("aria-hidden", "true");
-      link.append(copy, action);
+      const content = document.createElement("span");
+      content.className = "resource-link-content";
+      content.append(copy, action);
+      link.append(content);
       list.append(link);
     }
 

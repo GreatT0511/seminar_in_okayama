@@ -1,6 +1,14 @@
 // 資料の追加方法は README.md を参照してください。
 window.seminarResources = {
-  ando: [],
+  ando: [
+    {
+      title: "安藤先生の資料",
+      description: "生成AIエージェント 教育活用術のイマ｜Google スライド",
+      url: "https://docs.google.com/presentation/d/1NAYqAs5nvTcgshHPJohZWpJzQG7t23Q4E9BGpre7dTg/edit?usp=sharing",
+      thumbnail: "./assets/ando-cover.png",
+      thumbnailAlt: "生成AIエージェント 教育活用術のイマ：安藤昇の講演表紙",
+    },
+  ],
   tanaka: [
     {
       title: "講演資料｜Slow AIと学校づくり",

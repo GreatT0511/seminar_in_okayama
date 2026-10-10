@@ -94,6 +94,10 @@ h4 { margin: 0; font-size: 17px; font-weight: 650; }
 .resource-list { display: grid; align-content: start; gap: 12px; padding-left: 30px; }
 .resource-link { display: flex; align-items: center; gap: 18px; text-decoration: none; border: 1px solid var(--line); padding: 20px; transition: background .2s, border-color .2s; }
 .resource-link:hover { background: #182319; border-color: #718e45; }
+.resource-link-content { display: flex; align-items: center; gap: 18px; width: 100%; min-width: 0; }
+.resource-link--thumbnail { display: block; padding: 0; overflow: hidden; }
+.resource-thumbnail { display: block; width: 100%; height: auto; background: #fff; }
+.resource-link--thumbnail .resource-link-content { padding: 20px; }
 .resource-link-copy { min-width: 0; flex: 1; overflow-wrap: anywhere; }
 .resource-title { display: block; font-size: 16px; font-weight: 700; line-height: 1.6; }
 .resource-description { display: block; font-size: 13px; color: var(--muted); line-height: 1.8; margin-top: 5px; }
@@ -227,6 +231,7 @@ h4 { margin: 0; font-size: 17px; font-weight: 650; }
   .empty-state p { font-size: 10px; margin-top: 9px; }.empty-icon { width: 45px; height: 45px; }.empty-icon svg { width: 29px; height: 29px; }
   .materials-note { justify-content: start; font-size: 10px; margin-top: 18px; gap: 7px; }
   .resource-list { padding: 23px 0 0; }.resource-link { padding: 16px; gap: 10px; }.resource-title { font-size: 14px; }.resource-action { font-size: 10px; }
+  .resource-link-content { gap: 10px; }.resource-link--thumbnail { padding: 0; }.resource-link--thumbnail .resource-link-content { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px; }
   .appendix-jump { padding: 22px; font-size: 17px; gap: 18px; }
   .appendix { padding-block: 52px 60px; }.appendix h2 { font-size: clamp(30px, 7.5vw, 42px); }
   .appendix .section-heading > p { font-size: 16px; }.appendix-lead { font-size: 17px; }
