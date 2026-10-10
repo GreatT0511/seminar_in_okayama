@@ -7,9 +7,9 @@
     <meta name="description" content="教育セミナーin岡山の参加者向け共有資料サイト。安藤セッション・田中セッションの資料をこちらからご覧いただけます。">
     <title>教育セミナーin岡山 | 共有資料</title>
     <link rel="icon" href="./assets/favicon.svg?v=2" type="image/svg+xml">
-    <link rel="stylesheet" href="./assets/styles.css?v=3">
+    <link rel="stylesheet" href="./assets/styles.css?v=4">
     <script src="./assets/resources.js?v=3" defer></script>
-    <script src="./assets/app.js" defer></script>
+    <script src="./assets/app.js?v=4" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#sessions">共有資料へ移動</a>
@@ -127,7 +127,59 @@
           </section>
         </section>
         <p class="materials-note"><span aria-hidden="true">ⓘ</span> 講演資料と参考論文は、各セッションからご覧いただけます。</p>
+        <a class="appendix-jump" href="#appendix">付録：Workspace Studioのデータ分析ワーク <span aria-hidden="true">↓</span></a>
         <noscript><p class="materials-note">セッションを続けて表示しています。タブの切り替えには JavaScript を有効にしてください。</p></noscript>
+      </section>
+
+      <section class="appendix" id="appendix" aria-labelledby="appendix-heading">
+        <div class="section-heading">
+          <div><p class="section-kicker"><span aria-hidden="true">/</span> APPENDIX / HANDS-ON</p><h2 id="appendix-heading">付録｜Workspace Studioで<br>データ分析<span class="heading-dot" aria-hidden="true">.</span></h2></div>
+          <p>振り返りを、次の支援へ。<br>架空データで試す応用ワーク。</p>
+        </div>
+        <p class="appendix-lead">振り返りデータをGeminiステップで自動分析するワークです。終礼フォームの回答を蓄積し、毎日同じ時刻に分析して、Google Chatへ届ける流れを体験します。</p>
+
+        <ol class="work-flow" aria-label="データ分析フロー">
+          <li><span class="flow-number" aria-hidden="true">01</span><span class="flow-tool">Google Forms</span><strong>振り返りを集める</strong><span class="flow-description">終礼・90秒5問</span></li>
+          <li><span class="flow-number" aria-hidden="true">02</span><span class="flow-tool">Google Sheets</span><strong>回答を蓄積する</strong><span class="flow-description">スプレッドシートに記録</span></li>
+          <li><span class="flow-number" aria-hidden="true">03</span><span class="flow-tool">Workspace Studio</span><strong>Geminiで分析する</strong><span class="flow-description">毎日17:00に実行</span></li>
+          <li><span class="flow-number" aria-hidden="true">04</span><span class="flow-tool">Google Chat</span><strong>結果を届ける</strong><span class="flow-description">分析結果を自動配信</span></li>
+        </ol>
+
+        <div class="work-preparation">
+          <div class="work-dataset">
+            <p class="section-kicker">PRACTICE DATA</p>
+            <h3>まずは、自分のコピーを用意。</h3>
+            <p>共通教材は<strong>中2社会・20授業日 × 30人の架空データ</strong>です。開いたら「ファイル → コピーを作成」を選び、分析は自分のコピーで行ってください。</p>
+            <a class="work-data-link" href="https://docs.google.com/spreadsheets/d/17kO8JygX95ZsGy8wG3CJ07mWJNlnxKcQ9VSeMGqoxeg/edit" target="_blank" rel="noopener noreferrer">振り返りデータを開く <span aria-hidden="true">↗</span><span class="work-link-note">Google スプレッドシート・新しいタブ</span></a>
+            <p class="work-small">高校での実践では、担当科目や総合的な探究の時間の振り返りに置き換えて活用できます。</p>
+          </div>
+          <div class="work-roles">
+            <p class="section-kicker">AI × TEACHER</p>
+            <h3>分析はAIと。判断は教師が。</h3>
+            <p>分析の視点は5つ。①〜④はAIに任せ、⑤の「例外」は教師の目で背景を確かめます。</p>
+            <ul class="analysis-lenses"><li>① 集計</li><li>② 比較</li><li>③ 変化</li><li>④ 関係</li><li>⑤ 例外候補 → 教師が確認</li></ul>
+            <p class="work-small">型から外れた変化を見つけても、AIの出力だけで決めつけず、解釈や支援の判断につなげます。</p>
+          </div>
+        </div>
+
+        <div class="work-prompt">
+          <div class="work-prompt-heading"><div><p class="section-kicker">GEMINI STEP / PROMPT</p><h3 id="analysis-prompt-heading">Geminiステップに入れるプロンプト</h3></div><button class="copy-prompt" id="copy-analysis-prompt" type="button" aria-describedby="copy-status" hidden>プロンプトをコピー <span aria-hidden="true">↗</span></button></div>
+          <pre id="analysis-prompt" aria-labelledby="analysis-prompt-heading">あなたは学級担任の分析アシスタントです。次の振り返りデータ（終礼フォームの回答一覧）を分析してください。
+
+# 出力形式（この形式を厳守）
+【① 集計】クラス全体の理解度・記述の傾向を3行以内で
+【② 比較】項目間・グループ間で差が出ているところ
+【③ 変化】直近の日で前回から動きがあった点
+【④ 関係】理解度と学び方チェックのつながりで気づいたこと
+【⑤ 例外候補】前回比で急落・急伸・無言化した生徒番号を列挙（判断はしない）
+
+# ルール
+・生徒は匿名番号のまま扱い、実名を推測しない
+・⑤は候補の列挙まで。解釈や支援の判断は教師が行う</pre>
+          <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+          <p class="work-prompt-note">分析対象のデータも、前のステップの結果を使う「変数チップ」でGeminiステップへ渡します。Chatの本文にはGeminiの分析結果を差し込み、まず自分だけに届く形でテストしてください。</p>
+        </div>
+        <p class="appendix-source">元教材：<a href="https://greatt0511.github.io/kurashikim/sec03.html" target="_blank" rel="noopener noreferrer">倉敷南高校 生成AI活用講座 §3 Workspace Studio ↗</a><br>「応用ハンズオン｜振り返りデータをGeminiステップで自動分析する」より。教材制作：スクールエージェント株式会社。基本操作・変数・テストの解説も元教材から確認できます。</p>
       </section>
     </main>
 

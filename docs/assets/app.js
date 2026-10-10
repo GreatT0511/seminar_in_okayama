@@ -90,4 +90,20 @@
     list.hidden = list.childElementCount === 0;
     document.querySelector(`[data-empty="${session}"]`).hidden = !list.hidden;
   }
+
+  const copyButton = document.getElementById("copy-analysis-prompt");
+  const copyStatus = document.getElementById("copy-status");
+  copyButton.hidden = false;
+  copyButton.addEventListener("click", async () => {
+    copyButton.disabled = true;
+    copyStatus.textContent = "";
+    try {
+      await navigator.clipboard.writeText(document.getElementById("analysis-prompt").textContent);
+      copyStatus.textContent = "プロンプトをコピーしました。Geminiステップに貼り付けてください。";
+    } catch {
+      copyStatus.textContent = "自動コピーできませんでした。上のプロンプト本文を選択してコピーしてください。";
+    } finally {
+      copyButton.disabled = false;
+    }
+  });
 })();
