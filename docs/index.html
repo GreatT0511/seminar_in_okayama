@@ -7,8 +7,8 @@
     <meta name="description" content="教育セミナーin岡山の参加者向け共有資料サイト。安藤セッション・田中セッションの資料をこちらからご覧いただけます。">
     <title>教育セミナーin岡山 | 共有資料</title>
     <link rel="icon" href="./assets/favicon.svg?v=2" type="image/svg+xml">
-    <link rel="stylesheet" href="./assets/styles.css?v=2">
-    <script src="./assets/resources.js" defer></script>
+    <link rel="stylesheet" href="./assets/styles.css?v=3">
+    <script src="./assets/resources.js?v=3" defer></script>
     <script src="./assets/app.js" defer></script>
   </head>
   <body>
@@ -60,14 +60,73 @@
         </section>
 
         <section class="session-panel" id="tanaka" aria-labelledby="tanaka-heading">
-          <div class="panel-heading"><div><p class="panel-kicker">SESSION / 02</p><h3 id="tanaka-heading">田中セッション</h3><span class="panel-tag">セッション共有資料</span></div><span class="panel-index" aria-hidden="true">02</span></div>
+          <div class="panel-heading"><div><p class="panel-kicker">SESSION / 02</p><h3 id="tanaka-heading">田中セッション</h3><span class="panel-tag">講演資料・参考論文</span></div><span class="panel-index" aria-hidden="true">02</span></div>
           <div class="resource-list" data-resources="tanaka" hidden></div>
           <div class="empty-state" data-empty="tanaka">
             <span class="empty-icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M7 13h13l4 5h17v20H7V13Z" stroke="currentColor" stroke-width="1.4"/><path d="M7 18V9h13l4 4h13v5M19 28h10m-5-5v10" stroke="currentColor" stroke-width="1.4"/></svg></span>
-            <div><p class="empty-label">COMING SOON</p><h4>資料は準備中です</h4><p>公開まで、もうしばらくお待ちください。</p></div>
+            <div><p class="empty-label">PRESENTATION</p><h4>講演スライド</h4><p>資料のリンクを読み込んでいます。</p><noscript><p><a href="https://docs.google.com/presentation/d/1eB6CaHRQAVdPS7fjOfDRCqkFYy6rpB9ScPik8P1Pv_I/edit" target="_blank" rel="noopener noreferrer">Slow AIと学校づくりを開く（新しいタブ）</a></p></noscript></div>
           </div>
+
+          <section class="research-section" aria-labelledby="research-heading">
+            <div class="research-heading">
+              <div><p class="section-kicker"><span aria-hidden="true">/</span> RESEARCH NOTES</p><h4 id="research-heading">AIの使い方と、学習への影響</h4></div>
+              <p>原典確認：<time datetime="2026-10-10">2026.10.10</time></p>
+            </div>
+            <div class="research-intro">
+              <p class="research-message">AIと一緒に「できた」。<br>その後、自分で「できる」？</p>
+              <p>答えを得るための利用と、理解を深めるための利用では、結果が異なることがあります。2026年の研究を中心に、使い方の違いを考える4本を紹介します。</p>
+              <p class="research-caution">「生成AIを使うと必ず学力が下がる」という結論ではありません。短時間の課題成績、知識の保持、学力との相関は、それぞれ異なる指標です。</p>
+            </div>
+
+            <div class="paper-grid">
+              <article class="paper-card" aria-labelledby="paper-liu">
+                <div class="paper-meta"><span class="paper-badge">COLM 2026 採択</span><span>ランダム化実験</span></div>
+                <p class="paper-date">2026.10.03 改訂 · arXiv v5</p>
+                <h5 id="paper-liu">AIを外した直後の<br>自力成績が低下</h5>
+                <p class="paper-stat">71% <span>vs</span> 77%</p>
+                <p class="paper-stat-caption">数学追試の正答率：AI経験群 / 対照群</p>
+                <p class="paper-summary">米国成人を対象とした3実験（募集計1,222人）。数学追試の分析対象585人では、AI利用後の補助なし課題の正答率が対照群より低くなりました（p=.020）。使い方別の分析では、直接答えを得た人に低成績が集中していました。</p>
+                <details class="paper-details"><summary>条件と限界を読む</summary><p>短時間の利用後、直ちに測定した結果です。数日・数か月後も続くかは不明。使い方別の比較は無作為割付ではなく、因果関係を断定できません。粘り強さの低下も、全実験で一様に有意ではありません。</p></details>
+                <div class="paper-source"><p>G. Liu, B. Christian, T. Dumbalska, M. A. Bakker &amp; R. Dubey (2026).</p><p lang="en">AI Assistance Reduces Persistence and Hurts Independent Performance.</p><p>COLM 2026 採択。初稿：2026.04.06。</p><div class="source-links"><a href="https://arxiv.org/abs/2604.04721v5" target="_blank" rel="noopener noreferrer">原論文・参照版 ↗</a><a href="https://rachit-dubey.github.io/" target="_blank" rel="noopener noreferrer">採択情報（著者）↗</a></div></div>
+              </article>
+
+              <article class="paper-card" aria-labelledby="paper-rismanchian">
+                <div class="paper-meta"><span class="paper-badge paper-badge-preprint">プレプリント</span><span>準実験</span></div>
+                <p class="paper-date">2026.07.13 改訂 · arXiv v3</p>
+                <h5 id="paper-rismanchian">早く終わることと、<br>身につくことの違い</h5>
+                <p class="paper-stat">−25%<span> 正答オッズ</span></p>
+                <p class="paper-stat-caption">公開後11四半期の累計推定。正答率や得点の25%低下ではありません</p>
+                <p class="paper-summary">約320万件の数学学習記録などを分析。ChatGPT公開前後で、文章題とグラフ操作問題の変化を比較しました。AIで解きやすい文章題の学習時間が短縮し、別集団の監督下評価では、保持問題の正答オッズの相対的な低下が見られました。</p>
+                <details class="paper-details"><summary>条件と限界を読む</summary><p>ChatGPT公開後11四半期の累計推定で、正答オッズ比0.75（95%信頼区間0.56–0.98、p=.037）。AI利用を直接観測しておらず、学習時間と保持評価は別集団です。個人のAI利用が学力低下を引き起こしたとは断定できません。査読済み出版は確認できず、著者5人中4人はサービス運営元McGraw Hill所属です。</p></details>
+                <div class="paper-source"><p>S. Rismanchian, H. Uzun, J. Matayoshi, E. Cosyn &amp; E. Kurd-Misto (2026).</p><p lang="en">Faster Completion, Less Learning: Generative AI Reduced Study Time on Math Problems and the Knowledge They Build.</p><p>arXiv:2605.21629。初稿：2026.05.20。</p><div class="source-links"><a href="https://arxiv.org/abs/2605.21629v3" target="_blank" rel="noopener noreferrer">原論文・参照版 ↗</a></div></div>
+              </article>
+
+              <article class="paper-card" aria-labelledby="paper-lintner">
+                <div class="paper-meta"><span class="paper-badge">査読済み</span><span>横断調査・相関</span></div>
+                <p class="paper-date">2026.04.16 オンライン公開</p>
+                <h5 id="paper-lintner">理解よりAIへの問い方を<br>優先する態度と学力</h5>
+                <p class="paper-stat">2,307<span> 人</span></p>
+                <p class="paper-stat-caption">チェコの第7学年（12〜13歳）</p>
+                <p class="paper-summary">自分で理解するよりAIに適切に聞くことを重視する態度は、数学・チェコ語の学力テストで低い得点と関連していました。利用頻度だけでは、学力との頑健な関連は見られませんでした。</p>
+                <details class="paper-details"><summary>条件と限界を読む</summary><p>2024年の一時点の調査です。学力は数学30問・チェコ語40問のテスト、AIへの態度・利用頻度は自己申告で測定。態度は単一の質問で、実際の依存行動とは異なります。低学力だからAIに頼るという逆の関係もあり得るため、「AIで学力が低下した」という因果の証拠ではありません。</p></details>
+                <div class="paper-source"><p>T. Lintner, L. Juhaňák, M. Žáková, L. Plch &amp; I. Ropovik (2026).</p><p lang="en">Generative AI use and academic achievement: a cross-sectional study of Czech seventh-grade students.</p><p><cite>Education and Information Technologies, 31</cite>, 4829–4848.</p><div class="source-links"><a href="https://doi.org/10.1007/s10639-026-14002-3" target="_blank" rel="noopener noreferrer">原論文（DOI）↗</a></div></div>
+              </article>
+
+              <article class="paper-card" aria-labelledby="paper-bastani">
+                <div class="paper-meta"><span class="paper-badge">査読済み</span><span>ランダム化実験</span></div>
+                <p class="paper-date">2025.06.25 公開 · 設計差を検証した基礎研究</p>
+                <h5 id="paper-bastani">答えを渡すAIと、<br>ヒントで支えるAI</h5>
+                <p class="paper-stat">約17%<span> 低い</span></p>
+                <p class="paper-stat-caption">AIなし試験の対照群比（得点率で約5.4ポイント差）</p>
+                <p class="paper-summary">トルコの高校生約1,000人の数学実験。通常型のGPT Baseは練習中の成績を高めた一方、AIを外した試験では対照群を下回りました。教師が用意したヒントなどを使うGPT Tutorでは、対照群との有意な成績差は見られませんでした。</p>
+                <details class="paper-details"><summary>条件と限界を読む</summary><p>1校・高校数学・GPT-4での実験で、長期的な学力全体の低下を示すものではありません。GPT Tutorはヒント指示だけでなく、教師による正解や典型的誤答の情報も与えた設計です。「ヒント型なら必ず安全・成績向上」とは言えません。2025年8月の訂正は著者所属に関するものです。</p></details>
+                <div class="paper-source"><p>H. Bastani, O. Bastani, A. Sungu, H. Ge, Ö. Kabakcı &amp; R. Mariman (2025).</p><p lang="en">Generative AI without guardrails can harm learning: Evidence from high school mathematics.</p><p><cite>PNAS, 122</cite>(26), e2422633122.</p><div class="source-links"><a href="https://doi.org/10.1073/pnas.2422633122" target="_blank" rel="noopener noreferrer">原論文（DOI）↗</a></div></div>
+              </article>
+            </div>
+            <p class="research-footnote">数値は各論文の対象・課題・比較条件に限定されます。要約は本サイトによるものです。出典リンクは新しいタブで開きます。</p>
+          </section>
         </section>
-        <p class="materials-note"><span aria-hidden="true">ⓘ</span> 資料の公開後は、このページからご覧いただけます。</p>
+        <p class="materials-note"><span aria-hidden="true">ⓘ</span> 講演資料と参考論文は、各セッションからご覧いただけます。</p>
         <noscript><p class="materials-note">セッションを続けて表示しています。タブの切り替えには JavaScript を有効にしてください。</p></noscript>
       </section>
     </main>
